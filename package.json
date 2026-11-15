@@ -1,0 +1,28 @@
+{
+  "name": "ajeer-permit-backend",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "dev": "node --watch src/server.js",
+    "start": "node src/server.js",
+    "seed": "node src/scripts/seed.js",
+    "verify": "node verify/run-e2e.mjs"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mongoose": "^8.9.3",
+    "qrcode": "^1.5.4"
+  },
+  "devDependencies": {
+    "jsqr": "^1.4.0",
+    "mongodb-memory-server": "^11.3.0",
+    "pngjs": "^7.0.0"
+  },
+  "engines": {
+    "node": ">=20.x"
+  }
+}
