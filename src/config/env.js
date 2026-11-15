@@ -7,7 +7,7 @@ export const env = {
   adminToken: process.env.ADMIN_TOKEN || 'change-me',
 
   /* QR host = yeh backend.  QR = <PUBLIC_BASE_URL>/v/<id>  */
-  publicBaseUrl: strip(process.env.PUBLIC_BASE_URL, 'http://localhost:4000'),
+  publicBaseUrl: strip(process.env.PUBLIC_BASE_URL, 'https://ajeerbackend.vercel.app/'),
 
   /* scan hone par yahan bheja jata hai: <FRONTEND_URL>/v/<id> */
   frontendUrl: strip(process.env.FRONTEND_URL || process.env.FRONTEND_BASE_URL, 'https://ajeer-frontend.vercel.app'),
