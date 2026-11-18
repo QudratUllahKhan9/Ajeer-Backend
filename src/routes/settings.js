@@ -10,20 +10,21 @@ const admin = (req, res, next) => {
   next()
 }
 
-r.get('/', async (_req, res, next) => {
+// Dono '/' aur bina slash ke requests handle karne ke liye
+r.get(['/', ''], async (_req, res, next) => {
   try {
     res.json({ publicBaseUrl: await getBaseUrl(), frontendBaseUrl: await getFrontendUrl() })
   } catch (e) { next(e) }
 })
 
 /** change the QR host (frontend) and/or the API host, then re-render every QR */
-r.put('/domain', admin, async (req, res, next) => {
+r.put(['/domain', '/domain/'], admin, async (req, res, next) => {
   try {
     const { baseUrl, frontendBaseUrl, regenerate = true } = req.body || {}
     const doc = await setUrls({ baseUrl, frontendBaseUrl }, 'url change via API')
-    // only a BACKEND url change affects the QR; frontend url is a redirect target only
     const report = regenerate && baseUrl ? await regenerateAllQrs() : null
     res.json({ ok: true, publicBaseUrl: doc.publicBaseUrl, frontendBaseUrl: doc.frontendBaseUrl, report })
   } catch (e) { next(e) }
 })
+
 export default r
