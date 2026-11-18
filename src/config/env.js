@@ -16,6 +16,6 @@ export const env = {
      page     = backend khud HTML page banata hai                        */
   redirectMode: String(process.env.REDIRECT_MODE || 'redirect').toLowerCase(),
 
-  webOrigins: String(process.env.WEB_ORIGIN || 'http://localhost:5173,https://ajeer-frontend.vercel.app')
+  webOrigins: String(process.env.WEB_ORIGIN || 'http://localhost:5173,https://ajeer-frontend.vercel.app,https://ajeer-deshboard-pdf.vercel.app')
     .split(',').map((s) => s.trim()).filter(Boolean)
 }
