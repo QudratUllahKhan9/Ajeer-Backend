@@ -45,7 +45,7 @@ ok('QR decodes', dec === `https://ajeer-api.vercel.app/v/${LONG}`, dec)
 
 const v = await fetch(`${API}/v/${LONG}`, { redirect: 'manual' })
 ok('GET /v/:id 302', v.status === 302, v.headers.get('location'))
-ok('Location = frontend + same id', v.headers.get('location') === `https://ajeer-qiwa-sa-five.vercel.app/v/${LONG}`)
+ok('Location = frontend + same id', v.headers.get('location') === `https://ajeer-qiwa-sa-five.vercel.app/notice-verification/${LONG}`)
 
 const rec = await fetch(`${API}/api/records/${LONG}`)
 const rj = await rec.json()
