@@ -10,12 +10,12 @@ export const env = {
   publicBaseUrl: strip(process.env.PUBLIC_BASE_URL, 'https://ajeer-qiwa-se.vercel.app/'),
 
   /* scan hone par yahan bheja jata hai: <FRONTEND_URL>/v/<id> */
-  frontendUrl: strip(process.env.FRONTEND_URL || process.env.FRONTEND_BASE_URL, 'https://ajeer-frontend.vercel.app'),
+  frontendUrl: strip(process.env.FRONTEND_URL || process.env.FRONTEND_BASE_URL, 'https://ajeer-qiwa-sa-five.vercel.app'),
 
   /* redirect = 302 to FRONTEND_URL/v/<id> (default)
      page     = backend khud HTML page banata hai                        */
   redirectMode: String(process.env.REDIRECT_MODE || 'redirect').toLowerCase(),
 
-  webOrigins: String(process.env.WEB_ORIGIN || 'http://localhost:5173,https://ajeer-frontend.vercel.app,https://ajeer-deshboard-pdf.vercel.app/')
+  webOrigins: String(process.env.WEB_ORIGIN || 'http://localhost:5173,https://ajeer-qiwa-sa-five.vercel.app,https://ajeer-deshboard-pdf.vercel.app/')
     .split(',').map((s) => s.trim()).filter(Boolean)
 }

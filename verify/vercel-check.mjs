@@ -10,7 +10,7 @@ const mongo = await MongoMemoryServer.create()
 process.env.VERCEL = '1'
 process.env.MONGODB_URI = mongo.getUri('ajeer')
 process.env.PUBLIC_BASE_URL = 'https://ajeer-api.vercel.app'
-process.env.FRONTEND_URL = 'https://ajeer-frontend.vercel.app'
+process.env.FRONTEND_URL = 'https://ajeer-qiwa-sa-five.vercel.app'
 process.env.REDIRECT_MODE = 'redirect'
 process.env.ADMIN_TOKEN = 'tok'
 
